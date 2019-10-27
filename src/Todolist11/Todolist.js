@@ -25,6 +25,15 @@ export default class Todolist extends Component {
       todo:[...this.state.todo,data1]
   })
   }
+ //删除
+  delItem = (idx)=>{
+     this.setState((state,props)=>{
+         console.log(state.todo);
+            return {
+                todo: state.todo.filter((item,index)=>idx!==index)
+            }
+    })
+  }
 //点击确认完成时，judged值变成true
   changeItem=(idx)=>{
     this.state.todo[idx].judged=true;
@@ -37,17 +46,7 @@ export default class Todolist extends Component {
     let todo2=this.state.todo;
     this.setState({todo:todo2})
   }
-//删除
-	delItem = (idx)=>{
-       this.setState((state,props)=>{
-            console.log(state.todo);
-            return {
-                todo: state.todo.filter((item,index)=>idx!==index)
-            }
-    })
-    
-  }
-
+  
   render() {
     let doing=0,done=0;
     this.state.todo.forEach((item)=>{
@@ -65,9 +64,9 @@ export default class Todolist extends Component {
 		    <Todoinput add={this.addItem}/>
         <Todoing
           todo={this.state.todo}
+	  delItem={this.delItem}
           changeItem={this.changeItem}
-          changeItemAgain={this.changeItemAgain}
-          delItem={this.delItem}
+          changeItemAgain={this.changeItemAgain}        
           doing={doing}
           done={done}
         />
