@@ -63,12 +63,13 @@ export default class Todolist extends Component {
     return (
       <div>
 		    <Todoinput add={this.addItem}/>
-        <Todoing del={this.delItem}
-                todo={this.state.todo}
-                changeItem={this.changeItem}
-                changeItemAgain={this.changeItemAgain}
-                doing={doing}
-                done={done}
+        <Todoing
+          todo={this.state.todo}
+          changeItem={this.changeItem}
+          changeItemAgain={this.changeItemAgain}
+          delItem={this.delItem}
+          doing={doing}
+          done={done}
         />
       </div>
     );

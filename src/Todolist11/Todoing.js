@@ -20,7 +20,7 @@ export default class Todoing extends Component {
                                 <li key={idx}>
                                     <input type="checkbox" onClick={()=>this.props.changeItem(idx)}>
                                     </input>                          
-                                    {item.key}---<button onClick={()=>this.props.del(idx)}>
+                                    {item.key}---<button onClick={()=>this.props.delItem(idx)}>
                                         删除
                                     </button>
                                 </li>
@@ -44,7 +44,7 @@ export default class Todoing extends Component {
                                 <li key={idx}>
                                      <input type="checkbox" onClick={()=>this.props.changeItemAgain(idx)}>
                                     </input>
-                                    {item.key}---<button onClick={()=>this.props.del(idx)}>
+                                    {item.key}---<button onClick={()=>this.props.delItem(idx)}>
                                         删除
                                     </button>
                                 </li>
